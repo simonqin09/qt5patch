@@ -1,0 +1,12 @@
+--- layers/meta-qt5/recipes-qt/qt5/qtbase_git.bb	2017-03-14 11:08:53.346561118 +0800
++++ layers/meta-qt5/recipes-qt/qt5/qtbase_git.bb.linuxfb	2017-03-14 11:15:45.446121119 +0800
+@@ -42,7 +42,8 @@
+ # stuff like webkit (and it's easier to add options than remove)
+ 
+ PACKAGECONFIG_GL ?= "${@base_contains('DISTRO_FEATURES', 'opengl', 'gl', '', d)}"
+-PACKAGECONFIG_FB ?= "${@base_contains('DISTRO_FEATURES', 'directfb', 'directfb', '', d)}"
++#PACKAGECONFIG_FB ?= "${@base_contains('DISTRO_FEATURES', 'linuxfb', 'linuxfb', '', d)}"
++PACKAGECONFIG_FB ="linuxfb"
+ PACKAGECONFIG_X11 ?= "${@base_contains('DISTRO_FEATURES', 'x11', 'xcb xvideo xsync xshape xrender xrandr xfixes xinput2 xinput xinerama xcursor glib gtkstyle xkb', '', d)}"
+ PACKAGECONFIG_FONTS ?= ""
+ PACKAGECONFIG_SYSTEM ?= "jpeg libpng zlib"

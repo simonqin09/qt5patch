@@ -1,0 +1,22 @@
+--- layers/meta-toradex-demos/recipes-images/images/angstrom-lxde-image.bb	2017-03-14 11:08:53.406561134 +0800
++++ layers/meta-toradex-demos/recipes-images/images/angstrom-lxde-image.bb.qt5	2017-03-14 11:14:48.902867409 +0800
+@@ -200,6 +200,11 @@
+     xserver-xorg-extension-extmod \
+ "
+ 
++IMAGE_INSTALL_QT5 = " \
++    packagegroup-qt5 \
++    qt5-x11-free-systemd \
++"
++
+ IMAGE_INSTALL += " \
+     gconf \
+     gnome-vfs \
+@@ -248,6 +253,7 @@
+     libxcomposite \
+     alsa-states \
+     ${IMAGE_BROWSER} \
++    ${IMAGE_INSTALL_QT5} \
+ "
+ require recipes-images/images/lx.inc
+ require recipes-images/images/trdx-extra.inc
